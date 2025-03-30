@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 31 - Homework from InnoDOM - Task 3</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./task1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Задание 3</h1>
+
+    <p>
+        Предотвратите поведение по умолчанию для предотвращения отправки формы с пустыми значениями.
+    </p>
+
+    <p>
+        При вводе некорректных значений border инпутов должен окрашиваться в <span style="color: red">красный</span> цвет. А под ним должна появляться надпись с причиной не прошедшей валидации.
+    </p>
+
+    <br>
+    <br>
+    <br>
+
+    <form id="form" novalidate>
+        <div class="form-group">
+            <label for="fio">ФИО</label>
+            <input type="text" name="name" placeholder="ФИО" id="fio">
+            <div class="error" id="fioError">
+                Это поле обязательно для заполнения
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fio">Дата рождения</label>
+            <input type="date" name="date" id="birthday">
+            <div class="error" id="birthdayError">
+                Это поле обязательно для заполнения
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fio">Email</label>
+            <input type="email" name="email" id="email">
+            <div class="error" id="emailError">
+                <b>Требования к email</b> - использовать email pattern, так чтобы проходила валидация abc@abc.abc
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="fio">Телефон</label>
+            <input type="text" name="phone" id="phone">
+            <div class="error" id="phoneError">
+                <b>Требования к номеру телефона</b> - от 3 до 15 цифр, возможность префикса +, но не -.<br>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fio">Пароль</label>
+            <input type="password" name="password" placeholder="Пароль" id="password">
+            <div class="error" id="passwordError">
+                <b>Требования к паролю</b> - минимум 8 символов, хотя бы одна заглавная буква, одна цифра и один специальный символ.<br>
+            </div>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div class="form-success">
+        <p>Форма отправлена</p>
+    </div>
+
+    <script src="./task3.js"></script>
+</body>
+</html>
