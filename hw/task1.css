@@ -1,0 +1,56 @@
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+
+    input {
+        padding: 5px 10px;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: #2B7AF5;
+        color: white;
+        cursor: pointer;
+
+        font-size: 16px;
+
+        &:hover {
+            background-color: #1f65c9;
+        }
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.error {
+    color: red;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.form-success {
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
