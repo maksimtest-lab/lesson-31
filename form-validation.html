@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson 31 - Работа с датой и формами</title>
+        <style>
+            p {
+                margin: 0;
+            }
+
+            body {
+                background-color: #f2f2f2;
+                padding: 50px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .form-container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+            }
+
+            input, textarea, button {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+            .error {
+                color: red;
+                display: none;
+                font-size: 18px;
+                border-radius: 10px;
+            }
+
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                background-color: lightblue;
+                padding: 10px;
+                border-radius: 10px;
+                display: none;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="" class="login_form" id="login-form" novalidate>
+                <div class="form-group">
+                    <p>
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" required>
+                    </p>
+                    <div class="error" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label for="email">Email: </label>
+                        <input type="text" id="email" required>
+                    </p>
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label for="message">Message: </label>
+                        <textarea type="text" id="message" row="4" required></textarea>
+                    </p>
+                    <div class="error" id="messageError"></div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+        <script src="./form-validation.js"></script>
+    </body>
+</html>
