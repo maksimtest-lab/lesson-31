@@ -24,34 +24,41 @@ form.addEventListener('submit', (event) => {
         document.getElementById(`${key}Error`).classList.remove('active');
     }
 
+    const errors = {};
+
     for (let key in formData) {
         let value = formData[key];
-        console.log(key, value);
+        // console.log(key, value);
         if (value === '') {
             document.getElementById(`${key}Error`).classList.add('active');
             document.getElementById(`${key}`).style.border = '1px solid red';
-return;
+            errors[key] = 'error';
         }
 
         if (key === 'password' && !passwordRegex.test(value)) {
-            document.getElementById(`${key}Error`).classList.add('active');
-            document.getElementById(`${key}`).style.border = '1px solid red';
-            return;
+            errors[key] = 'error';
         }
 
         if (key === 'phone' && !phoneRegex.test(value)) {
-            document.getElementById(`${key}Error`).classList.add('active');
-            document.getElementById(`${key}`).style.border = '1px solid red';
-            return;
+            errors[key] = 'error';
         }
 
         if (key === 'email' && !emailRegex.test(value)) {
+            errors[key] = 'error';
+        }
+
+        if (key in errors) {
             document.getElementById(`${key}Error`).classList.add('active');
             document.getElementById(`${key}`).style.border = '1px solid red';
-            return;
+        } else {
+            document.getElementById(`${key}Error`).classList.remove('active');
+            document.getElementById(`${key}`).style.border = '1px solid green';
         }
     }
 
+    if (Object.keys(errors).length > 0) {
+        return;
+    }
 
     form.style.display = 'none';
     document.querySelector('.form-success').classList.add('active');
